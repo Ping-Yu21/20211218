@@ -45,6 +45,7 @@
                     <th>借用人</th>
                     <th>借用日期</th>
                     <th>預計歸還日期</th>
+                    <th>實際歸還日期</th>
                     <th>狀態</th>
                     <th>操作</th>
                 </tr>
@@ -64,14 +65,10 @@
             <h3>匯入物品清單</h3>
             <div class="import-options">
                 <div class="import-section">
-                    <h4>方法一：Excel 檔案匯入</h4>
+                    <h4>Excel 檔案匯入</h4>
                     <input type="file" id="excelFile" accept=".xlsx, .xls" />
-                    <p class="help-text">支援 .xlsx 或 .xls 檔案</p>
-                </div>
-                <div class="import-section">
-                    <h4>方法二：直接輸入</h4>
-                    <p>請將物品清單貼上（每行一個物品）：</p>
-                    <textarea id="itemsList" rows="10" cols="50"></textarea>
+                    <p class="help-text">支援 .xlsx 或 .xls 檔案（第一欄為物品名稱）</p>
+                    <div id="previewList" class="excel-preview"></div>
                 </div>
             </div>
             <div class="dialog-buttons">
@@ -84,7 +81,7 @@
     <!-- 在 body 結尾前添加歸還對話框 -->
     <div id="returnDialog" class="modal">
         <div class="modal-content">
-            <h3>物品歸還</h3>
+            <h3>物品歸��</h3>
             <div class="form-group">
                 <label for="actualReturnDate">實際歸還日期：</label>
                 <input type="datetime-local" id="actualReturnDate" required>
