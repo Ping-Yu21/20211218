@@ -299,3 +299,34 @@ tr:hover {
     margin-top: 0;
     color: var(--primary-blue);
 }
+
+.preview-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+}
+
+.preview-list {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.preview-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.preview-error ul {
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+.preview-error li {
+    margin: 5px 0;
+}
