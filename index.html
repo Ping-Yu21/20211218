@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>物品借用登記系統</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- FullCalendar 函式庫 -->
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/index.global.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.10/index.global.min.js'></script>
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/main.min.css' rel='stylesheet' />
+    <!-- SheetJS 函式庫 -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>物品借用登記系統</h1>
+        <form id="borrowForm">
+            <div class="form-group">
+                <label for="itemName">物品名稱：</label>
+                <select id="itemName" required>
+                    <option value="">請選擇物品</option>
+                </select>
+                <button type="button" id="importItems">匯入物品清單</button>
+            </div>
+            <div class="form-group">
+                <label for="borrower">借用人：</label>
+                <input type="text" id="borrower" required>
+            </div>
+            <div class="form-group">
+                <label for="borrowDate">借用日期：</label>
+                <input type="datetime-local" id="borrowDate" required>
+            </div>
+            <div class="form-group">
+                <label for="returnDate">預計歸還日期：</label>
+                <input type="datetime-local" id="returnDate" required>
+            </div>
+            <button type="submit">登記借用</button>
+        </form>
+
+        <h2>借用記錄</h2>
+        <table id="borrowList">
+            <thead>
+                <tr>
+                    <th>物品名稱</th>
+                    <th>借用人</th>
+                    <th>借用日期</th>
+                    <th>預計歸還日期</th>
+                    <th>狀態</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div class="calendar-section">
+            <h2>借用期程行事曆</h2>
+            <div id="calendar"></div>
+        </div>
+    </div>
+
+    <!-- Excel 匯入對話框 -->
+    <div id="importDialog" class="modal">
+        <div class="modal-content">
+            <h3>匯入物品清單</h3>
+            <div class="import-options">
+                <div class="import-section">
+                    <h4>方法一：Excel 檔案匯入</h4>
+                    <input type="file" id="excelFile" accept=".xlsx, .xls" />
+                    <p class="help-text">支援 .xlsx 或 .xls 檔案</p>
+                </div>
+                <div class="import-section">
+                    <h4>方法二：直接輸入</h4>
+                    <p>請將物品清單貼上（每行一個物品）：</p>
+                    <textarea id="itemsList" rows="10" cols="50"></textarea>
+                </div>
+            </div>
+            <div class="dialog-buttons">
+                <button id="confirmImport">確認匯入</button>
+                <button id="cancelImport">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 在 body 結尾前添加歸還對話框 -->
+    <div id="returnDialog" class="modal">
+        <div class="modal-content">
+            <h3>物品歸還</h3>
+            <div class="form-group">
+                <label for="actualReturnDate">實際歸還日期：</label>
+                <input type="datetime-local" id="actualReturnDate" required>
+            </div>
+            <div class="dialog-buttons">
+                <button id="confirmReturn">確認歸還</button>
+                <button id="cancelReturn">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

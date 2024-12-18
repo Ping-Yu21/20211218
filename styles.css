@@ -1,0 +1,301 @@
+:root {
+    --primary-blue: #1a73e8;
+    --light-blue: #e8f0fe;
+    --dark-blue: #174ea6;
+    --hover-blue: #1557b0;
+}
+
+body {
+    font-family: 'Segoe UI', '微軟正黑體', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--light-blue);
+}
+
+h2 {
+    color: var(--dark-blue);
+    margin: 25px 0 15px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--light-blue);
+}
+
+label {
+    display: inline-block;
+    width: 120px;
+    color: var(--dark-blue);
+    font-weight: 500;
+}
+
+input, select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    min-width: 200px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+button {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--hover-blue);
+}
+
+/* 表格樣式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 12px 8px;
+    text-align: left;
+}
+
+td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background-color: var(--light-blue);
+}
+
+/* 狀態樣式 */
+.status-borrowed {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+.status-returned {
+    color: #28a745;
+    font-weight: 500;
+}
+
+/* 按鈕樣式 */
+.button-return {
+    background-color: #28a745;
+    margin-right: 5px;
+}
+
+.button-return:hover {
+    background-color: #218838;
+}
+
+.button-delete {
+    background-color: #dc3545;
+}
+
+.button-delete:hover {
+    background-color: #c82333;
+}
+
+/* Modal 樣式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal h3 {
+    color: var(--primary-blue);
+    margin-top: 0;
+}
+
+.modal textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px 0;
+    resize: vertical;
+}
+
+.modal textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.dialog-buttons {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.dialog-buttons button {
+    margin-left: 10px;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    input, select {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .modal-content {
+        width: 90%;
+        margin: 10% auto;
+    }
+}
+
+.import-options {
+    margin: 20px 0;
+}
+
+.import-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.import-section h4 {
+    margin-top: 0;
+    color: var(--primary-blue);
+}
+
+.help-text {
+    font-size: 0.9em;
+    color: #666;
+    margin: 5px 0;
+}
+
+#excelFile {
+    margin: 10px 0;
+}
+
+/* 行事曆區塊樣式 */
+.calendar-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#calendar {
+    margin-top: 20px;
+}
+
+/* FullCalendar 客製化樣式 */
+.fc {
+    max-width: 100%;
+    background: white;
+}
+
+.fc .fc-toolbar-title {
+    color: var(--primary-blue);
+}
+
+.fc .fc-button-primary {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.fc .fc-button-primary:hover {
+    background-color: var(--hover-blue);
+    border-color: var(--hover-blue);
+}
+
+.fc-event {
+    cursor: pointer;
+    padding: 2px 4px;
+}
+
+.fc-event-borrowed {
+    background-color: #ff4444;
+    border-color: #ff4444;
+}
+
+.fc-event-returned {
+    background-color: #00C851;
+    border-color: #00C851;
+}
+
+.excel-preview {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.excel-preview ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.excel-preview li {
+    padding: 4px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.excel-preview h4 {
+    margin-top: 0;
+    color: var(--primary-blue);
+}
